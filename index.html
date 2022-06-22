@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+
+
+    <title>Picking</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action=""><div class="page flex">
+        <div class="question" id="questionFloor">
+        <label for="level" class="tooltip"><div class="tooltiptext">What's your current floor?</div>What's your floor?</label>
+        <input type="number"  onkeypress="checkFloorCorrect()" placeholder="0" name="level" value="0" id="levelid" min="0" max="4" maxlength="1"  required/>
+      </div>
+      <div class="question" id="questionCases">
+        <label for="cases" class="tooltip"><div class="tooltiptext">Your total</div>How many have you picked ?</label>
+        <input type="number" placeholder="0"  name="cases" value="0" id="casesid" min="0" required   pattern="[0-9]+"/>
+      </div>
+      <div class="question" id="questionCages">
+        <label for="cages" class="tooltip"><div class="tooltiptext">Cages so far</div>How many cages you had?</label>
+        <input type="number" placeholder="0"  name="cages" value="0" id="cagesid" min="0"  required  pattern="[0-9]+" />
+      </div>
+      <div class="question" id="questionDowntime">
+        <label for="downtime" class="tooltip"><div class="tooltiptext">Your downtime</div>How much of downtime did you get ?</label>
+        <input type="number"  placeholder="0" name="downtime" value="0" id="downtimeid" min="0" required pattern="[0-9]+"/>
+      </div>
+      <div class="question flex" id="questionChangeFloor">
+        <label for="isFloorChanged"class="tooltip"><div class="tooltiptext">New floor ?</div>Have you changed the floor ?</label>
+        <input class="checkbox1" value="true" type="checkbox" name="isFloorChanged" id="isFloorChangedid" />
+      </div>
+      </form>
+      <button type="button" class="btn" id="newNextButton" onclick="nextQuestionButton()">NEXT</button>
+      <button type="button" class="btn" id="previousButton" onclick="previousQuestionButton()">Previous</button>
+
+<button class="btn" type="button" onclick="saveData()" id="nextButton">Submit</button>
+
+
+<div class="results">How many left to do <div class="showPalletsToDo" id="showPalletsToDo">???</div>
+Have done so far
+<div id="withCagesAndDowntime">???</div>
+</div>
+    </div>
+      <div class="container"></div>
+    </div>
+    <script src="/index.js"></script>
+  </body>
+</html>
